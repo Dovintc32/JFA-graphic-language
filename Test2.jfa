@@ -1,0 +1,9 @@
+Win.name("Fo");
+Win.size(200, 700);
+String.Text = "200";
+Number.Cord_X = 20;
+Number.Cord_Y = 40;
+
+Open_Win{
+    Vis.text(Text, x:Cord_X, Cord_Y);
+};
