@@ -1,26 +1,17 @@
 {
     "JFA SETTINGS": {
         "Add_To_PATH": false,
-        "DebugP": true,
+        "DebugP": false,
         "Loging": false,
         "Status_Programm": {
-            "Error_Line": "39",
-            "Stopped": false,
-            "Stopped_Error": "SyntaxError"
+            "Error_Line": "",
+            "Open_Win": false,
+            "Stopped": false
         }
     },
-    "Type": {
-        "Number": {
-            "": 0
-        },
-        "String": {
-            "": ""
-        },
-        "Win": {
-            "Name": "",
-            "Open_Win": true,
-            "SizeX": 700,
-            "SizeY": 700
-        }
+    "Win": {
+        "Name": "",
+        "SizeX": 0,
+        "SizeY": 0
     }
 }

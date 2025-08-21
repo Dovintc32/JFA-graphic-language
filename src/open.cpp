@@ -3,28 +3,31 @@
 #include <fstream>
 #include <json.hpp>
 #include <cstdlib>
+#include <func.h>
 
 using json = nlohmann::json;
 
 int main(int argc, char* argv[]) {
-
     json j = {{"File_name", argv[1]}};
     std::ofstream("Data/data_cpp.json") << j.dump(4);
 
     std::system("core\\python_.exe src\\parser.py");
 
-    std::ifstream file("Data/data.json");
+    auto number_data = load_json("Data/Variables/number.json");
+    auto string_data = load_json("Data/Variables/string.json");
+
+    std::ifstream data_x("Data/data.json");
     json data;
-    file >> data; 
-    std::string name = data["Type"]["Win"]["Name"];
-    int SizeX = data["Type"]["Win"]["SizeX"];
-    int SizeY = data["Type"]["Win"]["SizeY"];
-    bool Open_Win = data["Type"]["Win"]["Open_Win"];
+    data_x >> data; 
+
+    std::string name = data["Win"]["Name"];
+    int SizeX = data["Win"]["SizeX"];
+    int SizeY = data["Win"]["SizeY"];
+    bool Open_Win = data["JFA SETTINGS"]["Status_Programm"]["Open_Win"];
 
     if (Open_Win == 1){
 
     sf::RenderWindow window(sf::VideoMode(SizeX, SizeY), name);
-    std::cout << Open_Win;
     
         while (window.isOpen()) {
             sf::Event event;
@@ -38,10 +41,21 @@ int main(int argc, char* argv[]) {
         }
     }
     
-
-    data["Type"]["Win"]["Name"] = "";
-    std::ofstream("Data/data.json") << std::setw(4) << data;
-    data["JFA SETTINGS"]["Status_Programm"]["Stopped"] = false;
+    data["Win"] = {
+        {"Name", ""},
+        {"SizeX", 0},
+        {"SizeY", 0}
+    };
+    data["JFA SETTINGS"]["Status_Programm"] = {
+        {"Error_Line", ""},
+        {"Stopped", false},
+        {"Open_Win", false}
+    };
+    number_data["Numbers"] = json::object();
+    string_data["String"] = json::object();
+    
+    save_json(number_data, "Data/Variables/number.json");
+    save_json(string_data, "Data/Variables/string.json");
     std::ofstream("Data/data.json") << std::setw(4) << data;
 
     return 0;
