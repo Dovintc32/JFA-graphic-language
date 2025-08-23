@@ -6,6 +6,9 @@
 #include <func.h>
 
 using json = nlohmann::json;
+#include <string>
+
+
 
 int main(int argc, char* argv[]) {
     json j = {{"File_name", argv[1]}};
@@ -15,6 +18,7 @@ int main(int argc, char* argv[]) {
 
     auto number_data = load_json("Data/Variables/number.json");
     auto string_data = load_json("Data/Variables/string.json");
+    
 
     std::ifstream data_x("Data/data.json");
     json data;
