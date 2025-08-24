@@ -75,8 +75,7 @@ try:
                 if com[com.index(".", 9)+1:com.index("(")] == "rgba":
                     if com[com.index("(")+1:com.index(")")].count(",") == 3:
                         colors = list(map(int, com[com.index("(")+1:com.index(")")].replace(" ", "").split(',')))
-                        print(colors)
-                        
+                        colors.append(f"T{TABS}")
                         if programm_start:
                             save_l1(f"Colorize.background.rgba-{command_line}", colors, file_commands)
                             recognized = True
@@ -86,13 +85,13 @@ try:
                     else:
                         errors.append((line, "SyntaxError", f"rgba принимает 4 значения не {com[com.index("(")+1:com.index(")")].count(",")+1}"))
                         raise SyntaxError("Не грусти")
-                    break
 
-                # RGB RGB RGB RGB RGB RGB RGB RGB RGB RGB
-
-                if com[com.index(".", 9)+1:com.index("(")] == "rgb":
+                    # RGB RGB RGB RGB RGB RGB RGB RGB RGB RGB
+                
+                elif com[com.index(".", 9)+1:com.index("(")] == "rgb":
                     if com[com.index("(")+1:com.index(")")].count(",") == 2:
                         colors = list(map(int, com[com.index("(")+1:com.index(")")].replace(" ", "").split(',')))
+                        colors.append(f"T{TABS}")
                         if programm_start:
                             save_l1(f"Colorize.background.rgb-{command_line}", colors, file_commands)
                             recognized = True
@@ -126,7 +125,7 @@ try:
         
         if com == "/n_Line;": recognized = True
         if com[0] == "#": recognized = True
-
+    
     if not recognized:
         errors.append((line, "Unknown Command"))
         raise SyntaxError("Не грусти")

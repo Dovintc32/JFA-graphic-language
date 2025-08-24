@@ -4,15 +4,14 @@
         "DebugP": false,
         "Loging": false,
         "Status_Programm": {
-            "Error_Line": "86",
+            "Error_Line": "",
             "Open_Win": false,
-            "Stopped": false,
-            "Stopped_Error": "SyntaxError"
+            "Stopped": false
         }
     },
     "Win": {
-        "Name": "Fos",
-        "SizeX": 700,
-        "SizeY": 700
+        "Name": "",
+        "SizeX": 0,
+        "SizeY": 0
     }
 }

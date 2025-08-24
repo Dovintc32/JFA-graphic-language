@@ -6,6 +6,5 @@ Number.Cord_X = 20;
 Number.Cord_Y = 40;
 
 Open_Win{
-    Colorize.background.rgba(0, 208, 255, 234)
-    if (event.type == "w")
+    Colorize.background.rgb(255, 0, 255);
 };

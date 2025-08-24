@@ -19,3 +19,4 @@ files_to_check = [
     ]
 programm_start = False
 command_line = 0
+TABS = 0
