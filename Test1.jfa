@@ -1,10 +1,13 @@
 Win.name("Fos");
-Win.size(700, 700);
+Win.size(500, 500);
 
 String.Text = "200";
 Number.Cord_X = 20;
 Number.Cord_Y = 40;
 
 Open_Win{
+    if (event.type == pressed and event.key.code(W));
+        Colorize.background.rgb(255, 0, 255);
+    fi;
     Colorize.background.rgb(255, 0, 255);
 };

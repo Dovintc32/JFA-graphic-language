@@ -5,8 +5,8 @@
         "Loging": false,
         "Status_Programm": {
             "Error_Line": "",
-            "Open_Win": false,
-            "Stopped": false
+            "Stopped": false,
+            "Open_Win": false
         }
     },
     "Win": {
